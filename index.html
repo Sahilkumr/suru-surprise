@@ -54,7 +54,7 @@
 
 <h1>💌 Enter the Secret Word</h1>
 <p>Only you can unlock this surprise!</p>
-<input type="text" id="secretInput" placeholder="Enter nickname">
+<input type="text" id="secretInput" placeholder="Enter What I Call You Often">
 <button onclick="checkSecret()">Unlock</button>
 
 <p id="message"></p>
@@ -68,17 +68,18 @@
 <script>
 function checkSecret() {
     let secretWord = document.getElementById("secretInput").value.trim().toLowerCase();
-    let correctWord = "mysecretword"; // Change to her nickname in lowercase
+    let correctWord = "misspharma"; // Change to her nickname in lowercase
 
     if (secretWord === correctWord) {
         document.getElementById("secretImage").src = "sketch.jpg"; // Replace with your uploaded image link
         document.getElementById("secretContent").style.display = "block";
         document.getElementById("message").textContent = "";
     } else {
-        document.getElementById("message").textContent = "❌ Oops! Try again.";
+        document.getElementById("message").textContent = "Are Madam Yaad Kro !";
     }
 }
 </script>
 
 </body>
 </html>
+
