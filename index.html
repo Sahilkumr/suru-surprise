@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secret for You ❤️</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #fff0f5;
+        text-align: center;
+        padding: 50px;
+    }
+    h1 {
+        color: #ff4d88;
+    }
+    input {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        width: 60%;
+        max-width: 250px;
+        font-size: 16px;
+    }
+    button {
+        padding: 10px 20px;
+        border: none;
+        background-color: #ff4d88;
+        color: white;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #e63e78;
+    }
+    #message {
+        margin-top: 20px;
+        color: red;
+        font-weight: bold;
+    }
+    #secretContent {
+        display: none;
+        margin-top: 30px;
+    }
+    img {
+        max-width: 90%;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    }
+</style>
+</head>
+<body>
+
+<h1>💌 Enter the Secret Word</h1>
+<p>Only you can unlock this surprise!</p>
+<input type="text" id="secretInput" placeholder="Enter nickname">
+<button onclick="checkSecret()">Unlock</button>
+
+<p id="message"></p>
+
+<div id="secretContent">
+    <h2>Happy Birthday 🎉</h2>
+    <p>Here’s something I made just for you ❤️</p>
+    <img id="secretImage" src="" alt="Special Sketch">
+</div>
+
+<script>
+function checkSecret() {
+    let secretWord = document.getElementById("secretInput").value.trim().toLowerCase();
+    let correctWord = "mysecretword"; // Change to her nickname in lowercase
+
+    if (secretWord === correctWord) {
+        document.getElementById("secretImage").src = "sketch.jpg"; // Replace with your uploaded image link
+        document.getElementById("secretContent").style.display = "block";
+        document.getElementById("message").textContent = "";
+    } else {
+        document.getElementById("message").textContent = "❌ Oops! Try again.";
+    }
+}
+</script>
+
+</body>
+</html>
