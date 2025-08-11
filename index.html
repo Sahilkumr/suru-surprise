@@ -43,10 +43,22 @@
         display: none;
         margin-top: 30px;
     }
-    img {
-        max-width: 90%;
+    .image-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+    .zoom-img {
+        max-width: 300px;
         border-radius: 10px;
         box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease;
+        cursor: zoom-in;
+    }
+    .zoom-img:hover {
+        transform: scale(1.2);
     }
 </style>
 </head>
@@ -54,7 +66,7 @@
 
 <h1>💌 Enter the Secret Word</h1>
 <p>Only you can unlock this surprise!</p>
-<input type="text" id="secretInput" placeholder="Enter What I Call You Often">
+<input type="text" id="secretInput" placeholder="Enter Ur Rx Nickname : I Call With !">
 <button onclick="checkSecret()">Unlock</button>
 
 <p id="message"></p>
@@ -62,24 +74,27 @@
 <div id="secretContent">
     <h2>Happy Birthday 🎉</h2>
     <p>Here’s something I made just for you ❤️</p>
-    <img id="secretImage" src="" alt="Special Sketch">
+    <div class="image-container">
+        <img id="secretImage1" class="zoom-img" src="" alt="Special Sketch 1">
+        <img id="secretImage2" class="zoom-img" src="" alt="Special Sketch 2">
+    </div>
 </div>
 
 <script>
 function checkSecret() {
     let secretWord = document.getElementById("secretInput").value.trim().toLowerCase();
-    let correctWord = "misspharma"; // Change to her nickname in lowercase
+    let correctWord = "mysecretword"; // Change to her nickname in lowercase
 
     if (secretWord === correctWord) {
-        document.getElementById("secretImage").src = "sketch.jpg"; // Replace with your uploaded image link
+        document.getElementById("secretImage1").src = "pic1.jpg"; // Replace with your first image
+        document.getElementById("secretImage2").src = "pic2.jpg"; // Replace with your second image
         document.getElementById("secretContent").style.display = "block";
         document.getElementById("message").textContent = "";
     } else {
-        document.getElementById("message").textContent = "Are Madam Yaad Kro !";
+        document.getElementById("message").textContent = "❌ Oops! Try again.";
     }
 }
 </script>
 
 </body>
 </html>
-
